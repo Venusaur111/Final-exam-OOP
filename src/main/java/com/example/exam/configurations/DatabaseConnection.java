@@ -1,4 +1,4 @@
-package com.example.exam.repositories;
+package com.example.exam.configurations;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 @Component
-public class ConnectionComponent {
+public class DatabaseConnection {
 
     @Value("${DB_HOST:localhost}")
     private String host;

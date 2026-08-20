@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -18,11 +19,11 @@ public class AccountServices {
     private AccountRepository accountRepository;
     private TransactionRepository transactionRepository;
 
-    public List<Transaction> getTransactionsByAccountId(String accountId) {
+    public List<Transaction> getTransactionsByAccountId(UUID accountId) {
         return transactionRepository.findByAccountId(accountId);
     }
 
-    public BigDecimal getAccountBalance(String accountId) {
+    public BigDecimal getAccountBalance(UUID accountId) {
         List<Transaction> transactions = transactionRepository.findByAccountId(accountId);
         BigDecimal balance = BigDecimal.ZERO;
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
@@ -19,13 +20,13 @@ public class AccountsController {
     private AccountServices accountServices;
 
     @GetMapping("/accounts/{id}/transactions")
-    public ResponseEntity<List<Transaction>> getTransactionsByAccountId(@PathVariable String id) {
+    public ResponseEntity<List<Transaction>> getTransactionsByAccountId(@PathVariable UUID id) {
         List<Transaction> transactions = accountServices.getTransactionsByAccountId(id);
         return ResponseEntity.ok(transactions);
     }
 
     @GetMapping("/account/{id}/balance")
-    public ResponseEntity<BigDecimal> getAccountBalance(@PathVariable String id) {
+    public ResponseEntity<BigDecimal> getAccountBalance(@PathVariable UUID id) {
         BigDecimal balance = accountServices.getAccountBalance(id);
         return ResponseEntity.ok(balance);
     }

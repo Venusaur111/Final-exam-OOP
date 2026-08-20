@@ -1,8 +1,8 @@
 package com.example.exam.controllers;
 
-import com.example.exam.model.Transaction;
-import com.example.exam.model.TransactionType;
-import com.example.exam.service.TransactionService;
+import com.example.exam.models.Transaction;
+import com.example.exam.models.TransactionType;
+import com.example.exam.services.TransactionServices;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping
 public class TransactionsController {
 
-    private final TransactionService transactionService;
+    private final TransactionServices transactionService;
 
     public TransactionsController(TransactionService transactionService) {
         this.transactionService = transactionService;

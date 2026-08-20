@@ -1,7 +1,7 @@
 package com.example.exam.controllers;
 
-import com.example.exam.model.Transaction;
-import com.example.exam.service.AccountService;
+import com.example.exam.models.Transaction;
+import com.example.exam.services.AccountServices;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,9 +12,9 @@ import java.util.List;
 @RequestMapping
 public class AccountsController {
 
-    private final AccountService accountService;
+    private final AccountServices accountService;
 
-    public AccountsController(AccountService accountService) {
+    public AccountsController(AccountServices accountService) {
         this.accountService = accountService;
     }
 
